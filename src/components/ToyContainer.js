@@ -1,12 +1,14 @@
 import React from "react";
 import ToyCard from "./ToyCard";
 
-function ToyContainer({ toys }) {
+function ToyContainer({ toys, handleDelete, onUpdateToy }) {
 
   const renderToyArray = toys.map((toy) => {
     return <ToyCard
       key={toy.id}
-      toy={toy} 
+      toy={toy}
+      handleDelete={handleDelete}
+      onUpdateToy={onUpdateToy} 
     />
   })
   

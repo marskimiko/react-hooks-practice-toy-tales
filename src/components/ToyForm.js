@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function ToyForm({ setToys }) {
+function ToyForm({ toys, setToys }) {
   const [name, setName] = useState("")
   const [image, setImage] = useState("")
 
@@ -17,7 +17,7 @@ function ToyForm({ setToys }) {
       body: JSON.stringify(formData),
     })
     .then(r => r.json())
-    .then(setToys)
+    .then(newToy => setToys([...toys, newToy]));
   }
 
   return (
